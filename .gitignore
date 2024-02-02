@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+*tmux
+*.vscode
+*.ds_store
+*.nvim
