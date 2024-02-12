@@ -17,7 +17,7 @@ func GetTwitterConfig() twitterConfig{
 
 
 func getEnvVariables() twitterConfig{
-  viper.SetConfigFile("../.env")
+  viper.SetConfigFile(".env")
   err := viper.ReadInConfig()
   if err!= nil{
     fmt.Println("error while reading config file", err)
