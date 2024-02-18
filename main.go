@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"friday-go/config"
+  "friday-go/helper"
 )
 func main(){
   //load env file 
@@ -10,5 +11,12 @@ func main(){
 
   //print twitter config
   fmt.Println("this is init file ")
-  fmt.Println("twitter config:", config.GetTwitterConfig())
+  twitterConfig := config.GetTwitterConfig()
+  fmt.Println("twitter config:", twitterConfig)
+
+  //initialize twitter 
+  twitterClient := helper.InitAuth(twitterConfig)
+  fmt.Println("twitter client:", twitterClient)
+
+
 }
