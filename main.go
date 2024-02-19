@@ -28,6 +28,14 @@ func main(){
   if err == nil{
     fmt.Println("error while searching tweets:", err)
   }
+
+  //retweet tweets 
+
+  for i,v := range tweets {
+    tweetId := fmt.Sprintf("%v", v)
+    userId := fmt.Sprintf("%v", i)
+    go helper.Retweet(&userId, &tweetId, twitterClient)
+  }
   fmt.Println("tweets")
   fmt.Println(tweets)
 }
