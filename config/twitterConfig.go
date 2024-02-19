@@ -10,6 +10,7 @@ type TConfig struct {
   ConsumerSecret string
   AccessToken string 
   AccessTokenSecret string
+  BearerToken string
 }
 func GetTwitterConfig() TConfig{
   return getEnvVariables()
@@ -27,6 +28,7 @@ func getEnvVariables() TConfig{
     ConsumerSecret: viper.Get("CONSUMER_SECRET").(string),
     AccessToken: viper.Get("ACCESS_TOKEN").(string),
     AccessTokenSecret: viper.Get("ACCESS_TOKEN_SECRET").(string),
+    BearerToken: viper.Get("BEARER_TOKEN").(string),
   }
   return tc
 }
